@@ -1,7 +1,9 @@
 #  Γ Physics Engine — Canonical Definition
 
-** Γ 物理引擎的創建者 & 公式創始者**：熊網區塊鏈(BearNetworkChain)創辦人 陳霆
+**Γ 物理引擎的創建者 & 公式創始者**：熊網區塊鏈(BearNetworkChain)創辦人 陳霆
+
 **最早提出時間**：2025 年 6 月 19 日  
+
 **原始位置**：https://www.facebook.com/share/p/19cadcMTGo/
 
 Γ 恆星常數（Gamma Stellar Constant）不是一個單純的數學式，它是 BearNetworkChain 在每個 block execution 完成後產生的全域狀態收斂 invariant，用於統一描述 state transition、time evolution 與 execution cost 之間的關係。
