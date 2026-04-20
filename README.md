@@ -1,4 +1,4 @@
-# BearNetworkChain Γ Physics Engine — Canonical Definition
+#  Γ Physics Engine — Canonical Definition
 
 **最早提出時間**：2025 年 6 月 19 日  
 **原始位置**：https://www.facebook.com/share/p/19cadcMTGo/
