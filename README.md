@@ -6,9 +6,9 @@
 
 **原始位置**：https://www.facebook.com/share/p/19cadcMTGo/
 
-Γ 恆星常數（Gamma Stellar Constant）不是一個單純的數學式，它是 BearNetworkChain 在每個 block execution 完成後產生的全域狀態收斂 invariant，用於統一描述 state transition、time evolution 與 execution cost 之間的關係。
+Γ 不是一個單純的數學指標，而是 Bear Network Chain 在每個區塊最終化階段產生的全域狀態收斂不變量（execution-level invariant）。它將狀態轉移（state transition）、時間演化（time evolution）與執行成本（execution cost）統一描述為單一可驗證、可被計算的數值，用以確保系統的長期穩定性與跨時間連續性。
 
-
+透過 Γ，我們希望讓這條鏈具備物理級的自我調節能力，並為長期、高價值、不可篡改的數據存檔提供堅實的數學基礎。
 
 ### 核心公式
 
@@ -18,7 +18,7 @@ $$
 
 ---
 
-### 3.1 符號定義
+### 符號定義
 
 - **ℑ**：系統狀態熵，由所有 account state change 與 storage mutation 的 XOR 結構差異組成，用於描述狀態變化所產生的資訊增量。
 - **∂Σ/∂t**：狀態隨時間的變化速率，對應 block-to-block execution 所形成的 state transition delta。
@@ -28,14 +28,14 @@ $$
 
 ---
 
-### 4. Γ 的作用
+### Γ 的作用
 
 每個 block 在完成 state transition 並進入 finalization 階段時，會計算唯一 Γ 值。  
 該值用於描述本次狀態變化的**全域一致性結果**，並作為該 block state correctness 的 invariant reference。
 
 ---
 
-### 5. Γ 的生命週期
+### Γ 的生命週期
 
 Γ 的計算嚴格發生在 **Block Finalization Phase**：
 
@@ -45,7 +45,7 @@ $$
 
 ---
 
-### 6. 系統行為規則
+### 系統行為規則
 
 每一個 block 在完成 state transition 後必須：
 
@@ -55,7 +55,7 @@ $$
 
 ---
 
-### 7. 可觀察輸入
+### 可觀察輸入
 
 - block state transition result
 - execution cost（gas / resource）
@@ -64,7 +64,7 @@ $$
 
 ---
 
-### 8. 可驗證輸出
+### 可驗證輸出
 
 - 同一 block 在所有節點產生相同 Γ
 - Γ 與 state root 對應一致
@@ -72,7 +72,7 @@ $$
 
 ---
 
-### 9. 系統約束
+### 系統約束
 
 - Γ 必須 deterministic
 - Γ 必須 replayable
@@ -81,13 +81,19 @@ $$
 
 ---
 
-### 10. Γ 的共識層地位
+### Γ 的共識層地位
 
 Γ 是在 block finalization 階段計算並提交的 execution-level invariant，並構成 consensus-valid state transition 的一部分，用於確保所有節點對同一 block 的狀態演化結果達成一致。
 
 ---
 
-### 11. Canonicality Statement
+### 實作現況
+
+我們目前正在將此公式規模化內嵌到 Bear Network Chain 的節點中。未來將透過硬分叉的方式，將 Γ 機制更替至 Bear Network Chain 所有上線的新節點，使其成為鏈的核心不變量。更多技術細節將在項目發展到適當階段時，以適當形式陸續公開。
+
+---
+
+### Canonicality Statement
 
 本文件為 BearNetworkChain Γ Physics Engine 的 **canonical specification**，是用作後續所有 implementation 與 verification 的唯一參考來源。
 
@@ -95,7 +101,7 @@ $$
 
 ---
 
-### 12. 對外承諾（Contract of System Behavior）
+### 對外承諾（Contract of System Behavior）
 
 BearNetworkChain 公開 Γ 的計算規則與驗證條件，但不公開內部實作細節。  
 所有節點必須基於相同 state transition 規則推導 Γ，以確保全網一致性。
