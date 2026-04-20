@@ -20,11 +20,32 @@ $$
 
 ### 符號定義
 
-- **ℑ**：系統狀態熵，由所有 account state change 與 storage mutation 的 XOR 結構差異組成，用於描述狀態變化所產生的資訊增量。
-- **∂Σ/∂t**：狀態隨時間的變化速率，對應 block-to-block execution 所形成的 state transition delta。
-- **ℰ**：執行過程中的資源消耗，用於描述 state transition 在 computation 層的成本影響。
-- **dV**：整體 state space 的聚合域，用來將所有局部變化收斂為單一系統級結果。
-- **2π ∫Σ(t) dψ**：時間相位的累積變化，用於確保 state evolution 在時間軸上的連續性與可追蹤性，使系統不僅是離散區塊序列，而是具備連續時間結構的狀態軌跡。
+Γ 公式中的各項符號定義如下：
+
+- **Γ（Gamma Value）**：  
+  系統的全域狀態收斂不變量，為公式的最終輸出結果，同時也是自指方程的求解對象。
+
+- **-kΓ（Self-referential Damping Term）**：  
+  自指阻尼項，其中 k 為阻尼係數（damping coefficient）。這是一個負回饋機制，用來防止系統狀態無限膨脹或失控，讓 Γ 成為一個動態平衡的固定點（fixed point）。它是公式設計中實現自我調節的核心閉環。
+
+  - k 為正實數阻尼係數  
+  - -kΓ 代表負回饋力，確保 Γ 不會無限增長  
+  - k 的設計讓整個 Γ 系統具備「物理級自我調節」的能力
+
+- **ℑ（System State Entropy）**：  
+  系統狀態熵，由所有帳戶狀態變更與儲存變動的 XOR 結構差異組成，用於量化狀態變化所產生的資訊增量。
+
+- **∂Σ/∂t（State Transition Velocity）**：  
+  狀態隨時間的變化速率，對應區塊與區塊之間執行所形成的 state transition delta。
+
+- **ℰ（Execution Cost Field）**：  
+  執行過程中的資源消耗，用於描述 state transition 在 computation 層的成本影響。
+
+- **dV（State Space Measure）**：  
+  整體狀態空間的聚合域，用來將所有局部變化收斂為單一系統級結果。
+
+- **2π ∫_Σ(t) dψ（Temporal Phase Integration）**：  
+  時間相位的累積變化，用於確保狀態演化在時間軸上的連續性與可追蹤性，使系統不僅是離散的區塊序列，而是具備連續時間結構的狀態軌跡。
 
 ---
 
