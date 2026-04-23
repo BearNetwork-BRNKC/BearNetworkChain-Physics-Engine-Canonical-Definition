@@ -247,8 +247,6 @@ gas / compute / memory resource 消耗模型。
 
 本文件僅描述 execution layer 變更及其在 Γ 系統中的局部投影關係。
 
-主網仍以 state root 作為唯一共識來源。
-
 ---
 
 > 回來得晚，不代表不屬於BearNetworkChain這條鏈。
