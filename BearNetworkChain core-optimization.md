@@ -175,9 +175,12 @@ if overlapCount <= 1 { return 0 }
 
 ---
 
-# Γ 完整理論（參考附錄）
+### Γ 完整理論（參考附錄）
 
-\Gamma = -k\Gamma = \int (\Im \oplus \frac{\partial \Sigma}{\partial t} - \mathcal{E}) , dV + 2\pi \int_{\Sigma(t)} d\psi
+$$
+\Gamma = -k\Gamma = \int (\Im \oplus \frac{\partial \Sigma}{\partial t} - \mathcal{E}) \, dV + 2\pi \int_{\Sigma(t)} d\psi
+$$
+
 
 ---
 
