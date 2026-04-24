@@ -1,133 +1,237 @@
-#  Γ Physics Engine — Canonical Definition
+# 🚩 Γ Physics Engine — Canonical Definition
 
-**Γ 物理引擎的創建者 & 公式創始者**：熊網區塊鏈(BearNetworkChain)創辦人 陳霆
-
+**Γ 物理引擎創建者 & 公式創始者**：熊網區塊鏈 (BearNetworkChain) 創辦人 陳霆  
 **最早提出時間**：2025 年 6 月 19 日  
-
-**原始位置**：https://www.facebook.com/share/p/19cadcMTGo/
-
-Γ 不是一個單純的數學指標，而是 Bear Network Chain 在每個區塊最終化階段產生的全域狀態收斂不變量（execution-level invariant）。它將狀態轉移（state transition）、時間演化（time evolution）與執行成本（execution cost）統一描述為單一可驗證、可被計算的數值，用以確保系統的長期穩定性與跨時間連續性。
-
-透過 Γ，我們希望讓這條鏈具備物理級的自我調節能力，並為長期、高價值、不可篡改的數據存檔提供堅實的數學基礎。
-
-### 核心公式
-
-$$
-dΓ/dt = -kΓ + ∫_V (ℑ ⊻ F(∂Σ/∂t) - ℰ) dV + 2π ∫ Σ(t) dψ
-$$
+**原始來源**：https://www.facebook.com/share/p/19cadcMTGo/
 
 ---
 
-### 符號定義
+## 📌 0. 語義一致性設計層（Semantic Normalization Layer）
 
-Γ 公式中的各項符號定義如下：
+本文件定義 Γ Physics Engine 的**標準語義行為規格**，目的為：
 
-- **Γ（Gamma Value）**：  
-  系統的全域狀態收斂不變量，為公式的最終輸出結果，同時也是自指方程的求解對象。
+> 在所有閱讀者（人類 / AI / compiler）之間維持唯一一致的語義解釋，不允許概念漂移（semantic drift）。
 
-- **-kΓ（Self-referential Damping Term）**：  
-  自指阻尼項，其中 k 為阻尼係數（damping coefficient）。這是一個負回饋機制，用來防止系統狀態無限膨脹或失控，讓 Γ 成為一個動態平衡的固定點（fixed point）。它是公式設計中實現自我調節的核心閉環。
+### 📎 語義規則（強制一致）
 
-  - k 為正實數阻尼係數  
-  - -kΓ 代表負回饋力，確保 Γ 不會無限增長  
-  - k 的設計讓整個 Γ 系統具備「物理級自我調節」的能力
+為避免歧義，本文件採用以下規則：
 
-- **ℑ（System State Entropy）**：  
-  系統狀態熵，由所有帳戶狀態變更與儲存變動的 XOR 結構差異組成，用於量化狀態變化所產生的資訊增量。
-
-- **∂Σ/∂t（State Transition Velocity）**：  
-  狀態隨時間的變化速率，對應區塊與區塊之間執行所形成的 state transition delta。
-
-- **ℰ（Execution Cost Field）**：  
-  執行過程中的資源消耗，用於描述 state transition 在 computation 層的成本影響。
-
-- **dV（State Space Measure）**：  
-  整體狀態空間的聚合域，用來將所有局部變化收斂為單一系統級結果。
-
-- **2π ∫_Σ(t) dψ（Temporal Phase Integration）**：  
-  時間相位的累積變化，用於確保狀態演化在時間軸上的連續性與可追蹤性，使系統不僅是離散的區塊序列，而是具備連續時間結構的狀態軌跡。
+- **中文優先（Primary Language: Traditional Chinese）**
+- **英文僅用於：**
+  - 無精確中文對應術語
+  - 已被國際技術社群固定使用之術語（如 invariant, operator, manifold）
+- **同一符號禁止多種語義名稱**
+- 所有概念均以「第一次定義為準」
 
 ---
 
-### Γ 的作用
+## 📌 1. 系統概述
 
-每個 block 在完成 state transition 並進入 finalization 階段時，會計算唯一 Γ 值。  
-該值用於描述本次狀態變化的**全域一致性結果**，並作為該 block state correctness 的 invariant reference。
+Γ Physics Engine 是 Bear Network Chain 的：
 
----
+> **執行層不變量抽象系統（Execution-Level Invariant Abstraction System）**
 
-### Γ 的生命週期
+其目的為統一描述三種系統行為：
 
-Γ 的計算嚴格發生在 **Block Finalization Phase**：
+- 狀態轉移（state transition）
+- 執行成本（execution cost）
+- 時間演化（temporal evolution）
 
-- execution layer 完成 state transition 後
-- 系統基於 state diff、execution cost 與 time evolution 計算 Γ
-- 計算完成的 Γ 會被寫入 block header，作為該 block 的可驗證狀態錨點
+並收斂為單一可驗證不變量：
 
----
-
-### 系統行為規則
-
-每一個 block 在完成 state transition 後必須：
-
-- 產生唯一 Γ 值
-- 該值描述該次 state transition 的全域一致性結果
-- Γ 會被寫入 block header 作為可驗證狀態錨點
+> **Γ（全域狀態不變量）**
 
 ---
 
-### 可觀察輸入
+## 📐 2. 核心公式（Canonical Form）
 
-- block state transition result
-- execution cost（gas / resource）
-- state diff（帳戶與 storage 變更）
-- timestamp evolution
-
----
-
-### 可驗證輸出
-
-- 同一 block 在所有節點產生相同 Γ
-- Γ 與 state root 對應一致
-- Γ 在歷史鏈中具有連續性與可重播性
+```math
+dΓ/dt = -kΓ + ∫_V (ℑ ⊻ F(∂Σ/∂t) - ℰ)\, dV + 2π ∫ Σ(t)\, dψ
+```
 
 ---
 
-### 系統約束
+## 🧾 3. 符號定義（統一語義層）
 
-- Γ 必須 deterministic
-- Γ 必須 replayable
-- Γ 必須與 state transition 完全對應
-- 不允許跨 block 修改歷史 Γ
-
----
-
-### Γ 的共識層地位
-
-Γ 是在 block finalization 階段計算並提交的 execution-level invariant，並構成 consensus-valid state transition 的一部分，用於確保所有節點對同一 block 的狀態演化結果達成一致。
+### Γ（全域不變量 / Global Invariant State）
+- 系統最終收斂結果
+- 表示 execution consistency 的數值化結果
+- 與 state root **相關但不等價**
 
 ---
 
-### 實作現況
-
-我們目前正在將此公式規模化內嵌到 Bear Network Chain 的節點中。未來將透過硬分叉的方式，將 Γ 機制更替至 Bear Network Chain 所有上線的新節點，使其成為鏈的核心不變量。更多技術細節將在項目發展到適當階段時，以適當形式陸續公開。
-
----
-
-### Canonicality Statement
-
-本文件為 BearNetworkChain Γ Physics Engine 的 **canonical specification**，是用作後續所有 implementation 與 verification 的唯一參考來源。
-
-**This specification is canonical and binding.**
+### k（阻尼係數 / Damping Coefficient）
+- 控制系統穩定性的負回饋參數
+- 防止 Γ 發散（divergence）
+- 僅作為穩定性控制，不參與語義擴展
 
 ---
 
-### 對外承諾（Contract of System Behavior）
-
-BearNetworkChain 公開 Γ 的計算規則與驗證條件，但不公開內部實作細節。  
-所有節點必須基於相同 state transition 規則推導 Γ，以確保全網一致性。
+### Σ(t)（狀態流形 / State Manifold）
+- 系統在時間 t 的全域狀態表示
+- 抽象狀態空間（不對應資料結構）
 
 ---
 
-**發佈說明**  
-此公告用於公開 Γ 公式的定義與規則，不包含任何內部實作細節。
+### ∂Σ/∂t（狀態變化算子 / State Evolution Operator）
+- block-to-block 狀態變化描述
+- 表示 execution delta
+
+---
+
+### ℑ（資訊場 / Information Field）
+- 交易與狀態變化造成的資訊擾動場
+- 表示系統內部資訊變化強度
+
+---
+
+### F(∂Σ/∂t)（拓撲觀測算子 / Topology Observation Operator）
+- 將狀態變化映射為拓撲特徵表示
+- black-box transformation operator
+
+⚠️ 約束：
+- 不可逆（non-invertible）
+- 不揭露 mapping 方法
+- 不等同 hashing 或 encoding
+
+---
+
+### ℰ（執行成本場 / Execution Cost Functional）
+- 系統資源消耗的抽象表示
+- 包含 computation / storage / gas 等概念
+
+---
+
+### V（積分域 / Integration Domain）
+- 全域狀態空間的抽象集合
+- 用於聚合系統行為
+
+---
+
+### ψ（相位變數 / Phase Variable）
+- 時間連續性參數
+- 用於描述 execution trajectory 的連續性
+- ❗ 不等價 timestamp（重要）
+
+---
+
+## ⚙️ 4. 執行生命週期（Execution Lifecycle）
+
+Γ 僅在以下階段計算：
+
+### Block Finalization Phase（區塊最終化階段）
+
+1. state transition 完成  
+2. execution cost 計算  
+3. ℑ 建立  
+4. ∂Σ/∂t 計算  
+5. F(∂Σ/∂t) 轉換  
+6. ℰ 計算  
+7. V 積分  
+8. ψ 相位積分  
+9. Γ 提交（commit）
+
+---
+
+## 🧠 5. 系統行為約束（Behavior Constraints）
+
+- Deterministic（確定性）
+- Replayable（可重播）
+- Finalization-only（僅最終化計算）
+- Independent of network latency（不受網路延遲影響）
+- Consistent with state root（與 state root 一致）
+
+---
+
+## 🔒 6. Red Flag（語義審計規則）
+
+### RF-Γ1
+Γ 非 deterministic
+
+### RF-Γ2
+F 被視為可逆或可還原結構
+
+### RF-Γ3
+dΓ/dt 非收斂
+
+### RF-Γ4
+Γ 與 state root 不一致
+
+### RF-Γ5
+非 finalization phase 計算 Γ
+
+### RF-Γ6
+引入外部非確定性來源
+
+---
+
+## 📦 7. 可觀測輸入（Observable Inputs）
+
+- state transition result（抽象表示）
+- execution cost field
+- state diff（不可結構化）
+- temporal ordering
+
+---
+
+## 📊 8. 可驗證輸出（Verifiable Outputs）
+
+- 相同輸入 → 相同 Γ
+- Γ 與 state root 一致
+- 支援 replay 驗證
+- 全節點 deterministic
+
+---
+
+## 🧠 9. 共識層地位（Consensus Role）
+
+Γ 為：
+
+- execution-level invariant
+- 非 consensus replacement
+- 非 state root replacement
+- 作為一致性驗證輔助量（consistency witness）
+
+---
+
+## 🔐 10. Canonicality Statement（規格鎖定）
+
+本文件為：
+
+> Γ Physics Engine 的唯一語義規格（Canonical Behavioral Specification）
+
+所有實作必須遵守：
+
+- 語義一致性（semantic consistency）
+- 行為一致性（behavior consistency）
+
+但不得：
+
+- 推導內部實作
+- 重建 execution graph
+- 推測系統架構
+
+---
+
+## ⚡ 最終定義（Final Definition）
+
+Γ 是：
+
+> execution-level invariant over blockchain state evolution  
+>（區塊鏈狀態演化的執行層不變量）
+
+---
+
+## 🧾 發佈聲明
+
+本文件僅定義：
+
+- 語義行為（semantic behavior）
+- 一致性規則（consistency rules）
+- 驗證條件（verification conditions）
+
+不包含：
+
+- implementation details
+- optimization strategies
+- internal architecture
