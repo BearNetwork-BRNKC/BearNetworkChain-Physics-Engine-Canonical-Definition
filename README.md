@@ -13,7 +13,7 @@
 ### 核心公式
 
 $$
-\Gamma = -k\Gamma = \int(\Im \veebar \frac{\partial\Sigma}{\partial t} - \mathcal{E}) dV + 2\pi \int_{\Sigma(t)} d\psi
+dΓ/dt = -kΓ + ∫_V (ℑ ⊻ F(∂Σ/∂t) - ℰ) dV + 2π ∫ Σ(t) dψ
 $$
 
 ---
