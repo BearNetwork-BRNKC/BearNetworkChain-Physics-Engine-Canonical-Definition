@@ -45,9 +45,33 @@
 
 ## 📐 2. 核心公式（Canonical Form）
 
-```math
-dΓ/dt = -kΓ + ∫_V (ℑ ⊻ F(∂Σ/∂t) - ℰ)\, dV + 2π ∫ Σ(t)\, dψ
-```
+BNES 系統定義如下：
+
+$$ System = (EVM, Clique, \Gamma, BNES) $$
+
+## 公理核心
+
+### 執行公理
+$$ S_{t+1} = \mathrm{EVM}(S_t, Tx_t) $$
+
+### 排序公理
+$$ B_t = \mathrm{Clique}(P_t) $$
+
+### 不變量觀測公理
+$$
+\frac{d\Gamma}{dt} = -k\Gamma + \int_V \left( \Im \oplus F\left(\frac{\partial \Sigma}{\partial t}\right) - \mathcal{E} \right) dV + 2\pi \int \Sigma(t) d\psi
+$$
+
+## 符號語義
+
+- $\Sigma$：狀態流形（State Manifold）
+- $\Gamma$：全域不變量標量（Global Invariant Scalar）
+- $\Im$：資訊流場（Information Flux Field）
+- $F$：拓撲觀測函數（Topological Observer Function）
+- $\mathcal{E}$：執行成本泛函（Execution Cost Functional）
+- $k$：阻尼係數（Damping Coefficient）
+- $\psi$：相位變數（Phase Variable）
+- $V$：積分域（Integration Domain）
 
 ---
 
