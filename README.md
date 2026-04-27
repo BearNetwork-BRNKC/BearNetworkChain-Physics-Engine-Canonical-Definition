@@ -1,6 +1,6 @@
 # BearNetworkChain BNES 節點架設指導說明書 (v1.1.0)
 
-本文件由 BearNetworkChain 官方生成，旨在提供開發者與運維工程師一份專業、清晰且完整的 BNES 節點部署與營運指南。基於 v1.1.0 規格報告書與 Grafana Dashboard v1.0.0 生成。
+本文件由 BearNetworkChain 官方生成，旨在提供開發者與運維工程師一份專業、清晰且完整的 BNES 節點部署與營運指南。
 
 ---
 
