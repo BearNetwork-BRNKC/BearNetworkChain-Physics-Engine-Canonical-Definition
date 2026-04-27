@@ -206,4 +206,5 @@ docker-compose ps
 
 > [!NOTE]
 > 本文件由 BearNetworkChain 官方生成，基於 v1.1.0 規格報告書與 Grafana Dashboard v1.0.0 生成。
+> 
 > © 2026 BearNetworkChain Technical Documentation Team.
