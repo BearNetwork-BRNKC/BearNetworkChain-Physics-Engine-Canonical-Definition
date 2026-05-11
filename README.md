@@ -216,6 +216,46 @@ docker-compose ps
 
 ---
 
+# Wiki Navigation
+
+This repository contains the canonical specification, execution semantics,
+formal verification model, and deterministic runtime definitions for
+BearNetworkChain Physics Engine and BNES.
+
+## Semantic Entry Map
+
+| Domain | Description | Wiki Entry |
+|---|---|---|
+| BNES Architecture | BearNetwork Execution Semantics architecture model | [Open](../../wiki/BearNetworkChain-BNES-技術架構與執行語義) |
+| Formal Verification | Formal verification specifications and validation rules | [Open](../../wiki/BearNetworkChain-形式化可驗證規格) |
+| Canonical Physics Engine | Physics engine canonical execution and mathematical semantics | [Open](../../wiki/BNES-Γ-物理引擎──數學與偽碼規格) |
+| Deterministic Execution | Ultra-high concurrency deterministic execution model | [Open](../../wiki/BNES・極端高併發下確定性執行・量子安全與狀態一致性證明) |
+| BNQL | BearNetwork Query Logic specification | [Open](../../wiki/BNQL-(BearNetwork-Query-Logic)-結構與語義定義) |
+| Full Chain Audit | Full-chain execution integrity audit reports | [Open](../../wiki/全鏈路執行完整性審計報告) |
+| Quantum Security | PQC & ZK implementation reports | [Open](../../wiki/1億級量子飽和對抗-(PQC-&-ZK)-實戰報告) |
+
+---
+
+## Repository Purpose
+
+This repository does not define a traditional game physics engine.
+
+It defines:
+- canonical state transitions
+- deterministic execution semantics
+- replay-safe distributed runtime behavior
+- verifiable state consistency
+- consensus-compatible physics execution
+
+The system is designed for:
+- distributed simulation consistency
+- blockchain-integrated execution
+- replay verification
+- fork-resistant state synchronization
+- formalizable execution boundaries
+
+- 
+
 > [!NOTE]
 > 本文件由 BearNetworkChain 官方生成，基於 v1.1.0 規格報告書與 Grafana Dashboard v1.0.0 生成。
 > 
