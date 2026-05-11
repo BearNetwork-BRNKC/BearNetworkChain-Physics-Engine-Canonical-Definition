@@ -1,4 +1,5 @@
 **[project_map.md](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/blob/main/project_map.md)的深度解讀**
+
 **BNES v1.3 系統架構的「憲法」級別的完整映射**。讓我分層解讀它的真實含義：
 
 ---
