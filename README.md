@@ -226,13 +226,13 @@ BearNetworkChain Physics Engine and BNES.
 
 | Domain | Description | Wiki Entry |
 |---|---|---|
-| BNES Architecture | BearNetwork Execution Semantics architecture model | [Open](../../wiki/BearNetworkChain-BNES-技術架構與執行語義) |
-| Formal Verification | Formal verification specifications and validation rules | [Open](../../wiki/BearNetworkChain-形式化可驗證規格) |
-| Canonical Physics Engine | Physics engine canonical execution and mathematical semantics | [Open](../../wiki/BNES-Γ-物理引擎──數學與偽碼規格) |
-| Deterministic Execution | Ultra-high concurrency deterministic execution model | [Open](../../wiki/BNES・極端高併發下確定性執行・量子安全與狀態一致性證明) |
-| BNQL | BearNetwork Query Logic specification | [Open](../../wiki/BNQL-(BearNetwork-Query-Logic)-結構與語義定義) |
-| Full Chain Audit | Full-chain execution integrity audit reports | [Open](../../wiki/全鏈路執行完整性審計報告) |
-| Quantum Security | PQC & ZK implementation reports | [Open](../../wiki/1億級量子飽和對抗-(PQC-&-ZK)-實戰報告) |
+| BNES Architecture | BearNetwork Execution Semantics architecture model | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/BearNetworkChain-BNES-%E6%8A%80%E8%A1%93%E6%9E%B6%E6%A7%8B%E8%88%87%E7%89%A9%E7%90%86%E5%BC%95%E6%93%8E%E9%87%8D%E6%A7%8B%E5%85%AC%E9%96%8B%E8%AA%AA%E6%98%8E) |
+| Formal Verification | Formal verification specifications and validation rules | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/BearNetworkChain-%E5%BD%A2%E5%BC%8F%E5%8C%96%E5%8F%AF%E9%A9%97%E8%AD%89%E8%A6%8F%E6%A0%BC) |
+| Canonical Physics Engine | Physics engine canonical execution and mathematical semantics | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/BNES-%CE%93-%E7%89%A9%E7%90%86%E5%BC%95%E6%93%8E-%E2%80%94-%E6%95%B8%E5%AD%B8%E8%88%87%E5%81%BD%E7%A2%BC%E8%A6%8F%E6%A0%BC) |
+| Deterministic Execution | Ultra-high concurrency deterministic execution model | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/BNES%EF%BC%9A%E6%A5%B5%E7%AB%AF%E9%AB%98%E4%BD%B5%E7%99%BC%E4%B8%8B%E7%A2%BA%E5%AE%9A%E6%80%A7%E5%9F%B7%E8%A1%8C%E3%80%81%E9%87%8F%E5%AD%90%E5%AE%89%E5%85%A8%E8%88%87%E7%89%A9%E7%90%86%E5%A0%B4%E6%94%B6%E6%96%82%E7%9A%84%E5%85%AC%E7%90%86%E5%8C%96%E6%A1%86%E6%9E%B6) |
+| BNQL | BearNetwork Query Logic specification | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/BNQL-(BearNetwork-Query-Logic)-%E7%B5%90%E6%A7%8B%E5%A0%B1%E5%91%8A%E6%9B%B8) |
+| Full Chain Audit | Full-chain execution integrity audit reports | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/%E5%85%A8%E9%8F%88%E8%B7%AF%E5%9F%B7%E8%A1%8C%E5%AE%8C%E6%95%B4%E6%80%A7%E5%AF%A9%E8%A8%88%E5%A0%B1%E5%91%8A) |
+| Quantum Security | PQC & ZK implementation reports | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/1-%E5%84%84%E7%B4%9A%E9%87%8F%E5%AD%90%E9%A3%BD%E5%92%8C%E5%B0%8D%E6%8A%97-(PQC-&-ZK)-%E5%AF%A6%E6%88%B0%E5%AF%A9%E8%A8%88%E5%A0%B1%E5%91%8A) |
 
 ---
 
