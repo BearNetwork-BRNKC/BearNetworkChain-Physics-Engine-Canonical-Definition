@@ -149,4 +149,4 @@ Canonical_Source: Only this account and the above GitHub
 Official source ONLY: [@CT_BearNetwork](https://x.com/CT_BearNetwork) and linked GitHub.
 
 ---
-*Created by Antigravity (Auditing Mode) | Synchronized with BNES v1.3 Canonical Edition*
+*Created by  Synchronized with BNES v1.3 Canonical Edition*
