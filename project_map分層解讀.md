@@ -1,6 +1,6 @@
 **[bnes_project_map.md](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/blob/main/project_map.md)的深度解讀**
 
-**BNES v1.3 系統架構的「憲法」級別的完整映射**。讓我分層解讀它的真實含義：
+**BNES v1.3 系統架構的完整映射**。
 
 ---
 
@@ -429,6 +429,10 @@ Official source ONLY: [@CT_BearNetwork]
 
 這份文件在宣佈：
 
-> **「我們已經構建了一個真正的物理系統，而不是純粹的軟體。每一行代碼都對應物理定律中的一個組件。整個系統可以被完全驗證、完全審計、完全理解。我們不要求『盲目信任』，而是提供『物理證明』。」**
+> **「我們已經構建了一個真正的物理系統，而不是純粹的軟體。
+
+每一行代碼都對應物理定律中的一個組件。
+
+整個系統可以被完全驗證、完全審計、完全理解。我們不要求『盲目信任』，而是提供『物理證明』。」**
 
 這是從「信任」到「證明」的根本轉變。
