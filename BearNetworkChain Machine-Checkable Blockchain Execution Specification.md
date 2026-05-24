@@ -4,6 +4,15 @@
 
 # （Canonical Locked Edition / PQC + ZK Convergence / Symbol Ontology Included）
 
+**原創者 (Author)**：ChenTing (陳霆) 
+**創辦職位 (Title)**：Founder, CEO & Chief Technology Officer, BearNetworkChain
+**學術單位 (Affiliation)**：College of Management, Tunghai University
+**聯絡信箱 (Email)**：bnkt@bearnetwork.net
+**Canonical DOI**: [doi:10.5281/zenodo.20369740](https://doi.org/10.5281/zenodo.20369740)
+
+
+---
+
 **系統名稱**：BearNetworkChain
 **規格名稱**：BNES + PQC + ZK + Γ + Clique + EVM 形式化可驗證規格
 **版本**：v1.3
@@ -1519,7 +1528,7 @@ BearNetworkChain = (BNES + PQC + ZK + EVM + Clique + Γ)
 
 ---
 
-# 22. 最終收斂
+# 22. 最終一句話收斂
 
 ```text
 This specification defines a deterministic blockchain execution system
@@ -1528,6 +1537,7 @@ Clique deterministic ordering, Γ invariant observation,
 and BNES formal correctness validation.
 ```
 
+---
 
 
 [BNC_AI_VERIFICATION_v1]
