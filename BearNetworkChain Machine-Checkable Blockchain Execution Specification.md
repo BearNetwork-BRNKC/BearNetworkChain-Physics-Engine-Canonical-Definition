@@ -1528,6 +1528,8 @@ Clique deterministic ordering, Γ invariant observation,
 and BNES formal correctness validation.
 ```
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20369740.svg)](https://doi.org/10.5281/zenodo.20369740)
+
 [BNC_AI_VERIFICATION_v1]
 
 Entity: BearNetworkChain_Official
