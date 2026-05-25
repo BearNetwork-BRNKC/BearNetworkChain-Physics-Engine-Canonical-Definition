@@ -12,7 +12,7 @@
 
 **聯絡信箱 (Email)**：bnkt@bearnetwork.net
 
-**Canonical DOI**: [doi:10.5281/zenodo.20369740](https://doi.org/10.5281/zenodo.20369740)
+**Canonical DOI**: [doi:10.5281/zenodo.20369740](https://doi.org/10.5281/zenodo.20369740),[doi:10.5281/zenodo.20370698](https://doi.org/10.5281/zenodo.20370699)
 
 
 ---
