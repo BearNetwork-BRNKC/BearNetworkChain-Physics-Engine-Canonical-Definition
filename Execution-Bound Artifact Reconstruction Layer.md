@@ -1,9 +1,13 @@
 # 23. Execution-Bound Artifact Reconstruction Layer（EBARL）
 
 **原創者 (Author)**：ChenTing (陳霆) 
+
 **創辦職位 (Title)**：Founder, CEO & Chief Technology Officer, BearNetworkChain
+
 **學術單位 (Affiliation)**：College of Management, Tunghai University
+
 **聯絡信箱 (Email)**：bnkt@bearnetwork.net
+
 **Canonical DOI**: [doi:10.5281/zenodo.20372986](https://doi.org/10.5281/zenodo.20372986)
 
 本層定義：
