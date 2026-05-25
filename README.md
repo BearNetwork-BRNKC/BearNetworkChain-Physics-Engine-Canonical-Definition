@@ -1,263 +1,488 @@
-> [!CAUTION]
-> ### ⚠️ 重要安全警示：遠離 Bastion X 詐騙平台 (SECURITY ALERT)
-> **Bear Network Chain (BNC) 官方在此聲明：**
-> 惡意平台 **"Bastion X"** 正在非法冒用「BNES Γ 物理引擎」技術白皮書與創辦人陳霆之名義進行金融詐騙。
-> 
-> *   **事實查核**：Bastion X 已被台灣 165 反詐騙單位列為假投資陷阱。
-> *   **技術聲明**：BNC 團隊與該平台無任何技術授權或合作關係。其展示之技術文件均為劫持與偽造。
-> *   **官方渠道**：請僅認準本 GitHub 官方倉庫。
-> 
-> **Warning**: "Bastion X" is a fraudulent platform misappropriating BNES Γ intellectual property. It has been blacklisted by law enforcement (Taiwan 165 Anti-Fraud). Please protect your assets.
+# 🚩 Γ Physics Engine — Canonical Definition
 
+**Γ 物理引擎創建者 & 公式創始者**：熊網區塊鏈 (BearNetworkChain) 創辦人 陳霆
 
-# BearNetworkChain BNES 節點架設指導說明書 (v1.1.0)
+**創辦職位 (Title)**：Founder, CEO & Chief Technology Officer, BearNetworkChain
 
-本文件由 BearNetworkChain 官方生成，旨在提供開發者與運維工程師一份專業、清晰且完整的 BNES 節點部署與營運指南。
+**學術單位 (Affiliation)**：College of Management, Tunghai University
+
+**聯絡信箱 (Email)**：bnkt@bearnetwork.net
+
+**最早提出時間**：2025 年 6 月 19 日
+
+**原始來源**：[https://www.facebook.com/share/p/19cadcMTGo/](https://www.facebook.com/share/p/19cadcMTGo/)
 
 ---
 
-## 1. 標題與版本資訊
+## 📌 0. 語義一致性設計層（Semantic Normalization Layer）
 
-*   **文件標題**：BearNetworkChain BNES 節點架設指導說明書
-*   **軟體版本**：v1.1.0 Production Release
-*   **更新日期**：2026-04-27
-*   **適用對象**：後端開發人員、DevOps 工程師、區塊鏈節點營運者（Validator/Signer）
+本文件定義 Γ Physics Engine 的**標準語義行為規格**，目的為：
 
----
+> 在所有閱讀者（人類 / AI / compiler）之間維持唯一一致的語義解釋，不允許概念漂移（semantic drift）。
 
-## 2. 系統需求
+### 📎 語義規則（強制一致）
 
-為了確保 BNES 引擎（Γ 物理引擎）的穩定運行，建議採用以下配置：
+為避免歧義，本文件採用以下規則：
 
-| 項目 | 最低配置 | 推薦配置 (生產環境) | Authority 節點 |
-| :--- | :--- | :--- | :--- |
-| **作業系統** | Ubuntu 20.04+ / CentOS 8+ | Ubuntu 22.04 LTS | 同推薦配置 |
-| **CPU** | 4 核心 | 8 核心+ (高效能單核尤佳) | 16 核心+ |
-| **記憶體** | 8 GB RAM | 16 GB - 32 GB RAM | 64 GB RAM |
-| **磁碟空間** | 100 GB SSD | 500 GB NVMe SSD | 2 TB+ NVMe SSD |
-| **網路頻寬** | 20 Mbps 穩定連線 | 100 Mbps+ 對等頻寬 | 1 Gbps+ |
-| **Go 版本** | v1.21+ | v1.22.x | 同推薦配置 |
+* **中文優先（Primary Language: Traditional Chinese）**
+* **英文僅用於：**
 
-> [!IMPORTANT]
-> **Authority (驗證器) 節點特殊需求**：必須具備極高可用性與強大的抗 DDoS 能力。強烈建議在 RPC 前端部署本指南提供的 Nginx Proxy。
+  * 無精確中文對應術語
+  * 已被國際技術社群固定使用之術語（如 invariant, operator, manifold）
+* **同一符號禁止多種語義名稱**
+* 所有概念均以「第一次定義為準」
 
 ---
 
-## 3. 快速上手（2 分鐘部署）
+## 📌 1. 系統概述
 
-### 方案 A：裸機部署（一鍵自動化）
-```bash
-# 1. 複製專案
-git clone https://github.com/BearNetworkChain/BearNetworkChain-Node.git && cd BearNetworkChain-Node
+Γ Physics Engine 是 Bear Network Chain 的：
 
-# 2. 初始化配置 (複製 .env 並編輯)
-cp deploy/configs/env.example deploy/configs/.env
+> **執行層不變量抽象系統（Execution-Level Invariant Abstraction System）**
 
-# 3. 執行安裝並啟動
-chmod +x deploy/scripts/*.sh
-./deploy/scripts/install.sh && ./deploy/scripts/start.sh
+其目的為統一描述三種系統行為：
+
+* 狀態轉移（state transition）
+* 執行成本（execution cost）
+* 時間演化（temporal evolution）
+
+並收斂為單一可驗證不變量：
+
+> **Γ（全域狀態不變量）**
+
+### 📎 Γ Physics Engine 的本體語義
+
+Γ Physics Engine 不是單純的監測器、不是附加計算量，也不是外掛式統計模組。
+Γ Physics Engine 是 Bear Network Chain 針對整體執行行為所定義的：
+
+> **全域不變量抽取引擎（Global Invariant Extraction Engine）**
+
+其核心職責是將 EVM 狀態轉移、Clique 排序、PQC 驗證、ZK 證明與執行成本耗散，壓縮成單一可重播、可驗證、可收斂之全域不變量 Γ。
+
+---
+
+## 📐 2. 核心公式（Canonical Form）
+
+### 1. 執行公理（Execution Axiom）
+
+```text
+S(t+1) = EVM(S(t), Tx(t))
 ```
 
-### 方案 B：Docker 部署（容器化）
-```bash
-# 1. 啟動完整服務棧
-docker-compose up -d
+### 2. 排序公理（Ordering Axiom）
 
-# 2. 檢查狀態
-docker-compose ps
+```text
+B(t) = Clique(P(t))
 ```
 
-✅ **完成後預期結果**：執行 `curl http://localhost:8545` 或 `./deploy/scripts/status.sh` 應顯示節點已連線並開始同步。
+### 3. 不變量觀測公理（Invariant Observation Axiom）
 
----
-
-## 4. 部署方式比較
-
-| 維度 | 裸機部署 (Bare Metal) | Docker 容器化部署 |
-| :--- | :--- | :--- |
-| **效能** | **極佳**（直接存取硬體資源，無虛擬化損耗） | **優秀**（極微小的 I/O 損耗，適合多數場景） |
-| **管理難度** | 中等（需管理環境相依、程序的存活） | **簡易**（一鍵啟動所有相關服務） |
-| **隔離性** | 較低 | **高**（環境完全隔離，不污染宿主機） |
-| **適用場景** | 生產環境、高性能 Authority 節點 | 開發測試、快速擴展、Staging 環境 |
-
----
-
-## 5. 方式一：裸機部署（推薦生產環境）
-
-### 前置準備
-確保系統已安裝 `git`, `make`, `gcc`, `jq`, `curl` 以及 `Go 1.22+`。
-
-### 部署流程
-1.  **安裝腳本**：執行 `./deploy/scripts/install.sh`。它會驗證系統環境、編譯 `bnes` 二進位檔並初始化創世區塊。
-2.  **配置調整**：根據實際需求修改 `.env` 檔案。
-3.  **啟動節點**：執行 `./deploy/scripts/start.sh`。腳本會檢查 PID 鎖並載入環境變數。
-
-### 腳本工具集（`deploy/scripts/`）
-| 腳本 | 主要用途 | 常用參數 |
-| :--- | :--- | :--- |
-| `start.sh` | 啟動節點程序 | 無 |
-| `stop.sh` | 安全關閉節點 | 無（會自動讀取 `BNES_STOP_GRACE_PERIOD`） |
-| `status.sh` | 檢查健康狀況 | 無 |
-| `restart.sh` | 重啟服務 | `--no-cooldown` (跳過冷卻) |
-| `upgrade.sh` | 執行無痛升級 | `--force` (強制覆蓋), `--no-pull` (本地升級) |
-| `rollback.sh` | 版本回滾 | `--force` (忽略警告) |
-
----
-
-## 6. 方式二：Docker / Docker Compose 部署
-
-針對 v1.1.0 生態系，我們提供了預配置的容器化方案。
-
-### Dockerfile (最佳化多階段建置)
-專屬 `Dockerfile` 採用 Go + Alpine 組合，確保映像檔最小化（約 150MB）且具備生產級安全性。
-
-### Docker Compose 架構
-預設啟動以下服務鏈：
-- `bnes-node`: 核心區塊鏈節點
-- `nginx-proxy`: RPC 安全防護層
-- `prometheus`: 指標蒐集器
-- `grafana`: 視覺化面板
-
-### 常用操作
-- **啟動所有服務**：`docker-compose up -d`
-- **查看日誌**：`docker-compose logs -f bnes-node`
-- **停止服務**：`docker-compose down`
-
----
-
-## 7. 配置詳細說明
-
-所有配置皆集中於 `deploy/configs/` 目錄：
-
-*   **`env.example` ↔ `.env` 對應表**：
-    - `BNES_CHAIN_ID`: **[必填]** 641230（主網固定值）。
-    - `BNES_BOOTNODES`: **[必填]** 官方提供的引導節點列表。
-    - `BNES_DATA_DIR`: **[選填]** 數據儲存路徑，預設 `./node-data`。
-    - `BNES_CACHE`: **[進階]** 記憶體快取 (MB)，建議設為總 RAM 的 50%。
-    - `BNES_GCMODE`: **[進階]** `archive` (保留全部) 或 `full` (清理舊狀態)。
-
-*   **RPC Proxy 安全設定 (`nginx.conf`)**：
-    - **限流**：每秒 100 請求 (`BNES_PROXY_RATE_LIMIT`)。
-    - **Body 限制**：防止大請求攻擊 (`BNES_PROXY_MAX_BODY_SIZE=512k`)。
-    - **健康檢查**：提供 `/health` 與 `/ready` 探針。
-
----
-
-## 8. 節點角色與啟動參數
-
-| 節點角色 | 說明 | 關鍵啟動參數 |
-| :--- | :--- | :--- |
-| **Full Node** | 完整驗證所有交易與 Γ 物理量，適合 DApp 入口。 | `--http --syncmode full --gcmode full` |
-| **Archive Node**| 適合區塊瀏覽器，保留所有歷史狀態。 | `--gcmode archive` |
-| **Light Node** | 快速同步，僅同步 Header，適合輕量存取。 | `--syncmode snap` |
-| **Authority** | 驗證器/出塊者，負責維護網絡安全。 | `--mine --miner.etherbase 0x... --password ...` |
-
----
-
-## 9. 監控與觀測（Grafana & Prometheus）
-
-### 監控系統匯入步驟
-1.  **登入 Grafana**：預設存取 `http://YOUR_IP:3000` (預設帳密 admin/admin)。
-2.  **設定資料源**：新增 `Prometheus` Data Source，URL 填入 `http://prometheus:9090`。
-3.  **匯入 Dashboard**：
-    - 側邊欄點選 **Dashboards** -> **Import**。
-    - 點選 **Upload JSON file** 並選擇 `deploy/observability/dashboard.json`。
-    - 選擇剛才建立的 Prometheus 資料源。
-
-### Dashboard 結構說明 (按優先級)
-1.  **🟢 節點健康總覽**：顯示節點是否在線 (Up)、Peer 數量、Uptime 以及記憶體佔用。
-2.  **📦 同步與出塊**：最關鍵區塊，監控當前區塊高度、處理延遲以及是否有鏈重組 (Reorg) 發生。
-3.  **🌐 RPC 狀態**：監控 DApp 存取量 (QPS)、請求錯誤率與回應時間分佈 (P99)。
-4.  **💻 資源使用**：CPU、Disk I/O 與 Goroutines 趨勢，提早預警硬體瓶頸。
-5.  **📡 P2P 網路**：流量吞吐量與節點連線性分佈。
-
----
-
-## 10. 升級與回滾流程
-
-> [!CAUTION]
-> 在執行升級前，請務必確保節點已完成備份或使用 `upgrade.sh` 的自動備份功能。
-
-### 升級指令
-```bash
-# 自動抓取最新版本並備份舊版後升級
-./deploy/scripts/upgrade.sh
-
-# 升級失敗？自動回滾至上一版本
-./deploy/scripts/rollback.sh --force
+```text
+dΓ/dt = -kΓ + ∫_V (ℑ XOR F(∂Σ/∂t) - ℰ) dV + 2π ∫ Σ(t) dψ
 ```
 
+### 4. 不變量收斂公理（Steady-State Axiom）
+
+當系統進入 block finalization 並達成收斂平衡時：
+
+```text
+dΓ/dt = 0
+```
+
+因此：
+
+```text
+0 = -kΓ + ∫_V (ℑ XOR F(∂Σ/∂t) - ℰ) dV + 2π ∫ Σ(t) dψ
+```
+
+整理得：
+
+```text
+kΓ = ∫_V (ℑ XOR F(∂Σ/∂t) - ℰ) dV + 2π ∫ Σ(t) dψ
+```
+
+因此 Γ 的穩態收斂解為：
+
+```text
+Γ* = (1/k) [ ∫_V (ℑ XOR F(∂Σ/∂t) - ℰ) dV + 2π ∫ Σ(t) dψ ]
+```
+
+### 5. 最終提交值（Committed Invariant）
+
+```text
+Γ_final = max(Γ_min, Γ*)
+```
+
+### 6. Γ 物理引擎身份公理（Identity Axiom）
+
+```text
+Γ := Φ(S(t), Tx(t), B(t), Π(t), W(t), P(t))
+```
+
+其中：
+
+* `Φ` = 全域執行不變量抽取算子（invariant extraction operator）
+* `S(t)` = 當前狀態
+* `Tx(t)` = 交易輸入
+* `B(t)` = 區塊排序結果
+* `Π(t)` = 零知識證明狀態
+* `W(t)` = 見證集合
+* `P(t)` = 政策集合
+
 ---
 
-## 11. 常見問題排除（Troubleshooting）
+**此五條公理構成 BearNetworkChain 的形式化基礎：**
 
-| 症狀 | 檢查方向 | 解決方法 |
-| :--- | :--- | :--- |
-| **Peer 數為 0** | 檢查 `.env` 中的 `BNES_BOOTNODES` | 確保填入官方 enode 地址；開啟防火牆 30303 (TCP/UDP)。 |
-| **區塊高度停滯** | 執行 `./deploy/scripts/status.sh` | 檢查是否存在磁碟空間不足 (df -h) 或記憶體溢位。 |
-| **RPC 413 錯誤** | 檢查 `nginx.conf` | 請求大小超過 `client_max_body_size`，請調大配置。 |
-
----
-
-## 12. 安全最佳實務
-
-1.  **金鑰管理**：嚴禁將 `keystore` 解鎖密碼檔案 (`password.txt`) 上傳至任何 Git 倉庫。
-2.  **RPC 隔離**：絕不對外開放 `admin`, `debug`, `personal` API。
-3.  **權限控制**：腳本目錄與資料目錄建議權限設為 `700` 或 `755`，並使用非 root 用戶執行程序。
-4.  **Authority 守則**：驗證器節點應避免與其他 DApp 服務共用硬體，確保資源不被非預期負載爭搶。
+* 前兩條定義執行與排序行為
+* 第三條定義 Γ 的動態觀測行為
+* 第四條定義 Γ 在 finalization 的固定點收斂
+* 第五條定義 Γ Physics Engine 的系統身份本體
 
 ---
 
-## 13. 後續維護與貢獻
+## 🧾 3. 符號定義（統一語義層）
 
-*   **日誌查看**：`tail -f deploy/logs/node.log`。
-*   **提交 PR**：請確保代碼符合 BNES 形式化驗證規格，並通過 `make test`。
-*   **聯繫官方**：若遇到核心物理引擎錯誤 (RF-1)，請立即回報至官方安全性小組。
+### Γ（全域不變量 / Global Invariant State）
 
----
+* 系統最終收斂結果
+* 表示 execution consistency 的數值化結果
+* 與 state root **相關但不等價**
+* 由全域執行歷史、證明材料與政策約束共同抽取
+* 在 finalization 時可視為收斂固定點 `Γ*`
+* `Γ_final` 為最終提交值
 
-# Wiki Navigation
+### Γ Physics Engine（全域不變量抽取引擎 / Global Invariant Extraction Engine）
 
-This repository contains the canonical specification, execution semantics,
-formal verification model, and deterministic runtime definitions for
-BearNetworkChain Physics Engine and BNES.
-
-## Semantic Entry Map
-
-| Domain | Description | Wiki Entry |
-|---|---|---|
-| BNES Architecture | BearNetwork Execution Semantics architecture model | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/BearNetworkChain-BNES-%E6%8A%80%E8%A1%93%E6%9E%B6%E6%A7%8B%E8%88%87%E7%89%A9%E7%90%86%E5%BC%95%E6%93%8E%E9%87%8D%E6%A7%8B%E5%85%AC%E9%96%8B%E8%AA%AA%E6%98%8E) |
-| Formal Verification | Formal verification specifications and validation rules | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/BearNetworkChain-%E5%BD%A2%E5%BC%8F%E5%8C%96%E5%8F%AF%E9%A9%97%E8%AD%89%E8%A6%8F%E6%A0%BC) |
-| Canonical Physics Engine | Physics engine canonical execution and mathematical semantics | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/BNES-%CE%93-%E7%89%A9%E7%90%86%E5%BC%95%E6%93%8E-%E2%80%94-%E6%95%B8%E5%AD%B8%E8%88%87%E5%81%BD%E7%A2%BC%E8%A6%8F%E6%A0%BC) |
-| Deterministic Execution | Ultra-high concurrency deterministic execution model | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/BNES%EF%BC%9A%E6%A5%B5%E7%AB%AF%E9%AB%98%E4%BD%B5%E7%99%BC%E4%B8%8B%E7%A2%BA%E5%AE%9A%E6%80%A7%E5%9F%B7%E8%A1%8C%E3%80%81%E9%87%8F%E5%AD%90%E5%AE%89%E5%85%A8%E8%88%87%E7%89%A9%E7%90%86%E5%A0%B4%E6%94%B6%E6%96%82%E7%9A%84%E5%85%AC%E7%90%86%E5%8C%96%E6%A1%86%E6%9E%B6) |
-| BNQL | BearNetwork Query Logic specification | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/BNQL-(BearNetwork-Query-Logic)-%E7%B5%90%E6%A7%8B%E5%A0%B1%E5%91%8A%E6%9B%B8) |
-| Full Chain Audit | Full-chain execution integrity audit reports | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/%E5%85%A8%E9%8F%88%E8%B7%AF%E5%9F%B7%E8%A1%8C%E5%AE%8C%E6%95%B4%E6%80%A7%E5%AF%A9%E8%A8%88%E5%A0%B1%E5%91%8A) |
-| Quantum Security | PQC & ZK implementation reports | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/1-%E5%84%84%E7%B4%9A%E9%87%8F%E5%AD%90%E9%A3%BD%E5%92%8C%E5%B0%8D%E6%8A%97-(PQC-&-ZK)-%E5%AF%A6%E6%88%B0%E5%AF%A9%E8%A8%88%E5%A0%B1%E5%91%8A) |
-| General Specifications | Complete General Specification Report | [Open](https://github.com/BearNetwork-BRNKC/BearNetworkChain-Physics-Engine-Canonical-Definition/wiki/BearNetworkChain-%E5%AE%8C%E6%95%B4%E7%B8%BD%E8%A6%8F%E6%A0%BC%E5%A0%B1%E5%91%8A%E6%9B%B8) |
+* 針對 BearNetworkChain 執行層所設計的全域一致性抽取機制
+* 將 EVM / Clique / PQC / ZK / Witness / Policy 的整體執行結果投影為單一 Γ
+* 不作為共識替代，不作為 state root 替代
+* 作為一致性驗證輔助量與執行層觀測核心
 
 ---
 
-## Repository Purpose
+### k（阻尼係數 / Damping Coefficient）
 
-This repository does not define a traditional game physics engine.
+* 控制系統穩定性的負回饋參數
+* 防止 Γ 發散（divergence）
+* 僅作為穩定性控制，不參與語義擴展
+* `k > 0` 為收斂必要條件之一
 
-It defines:
-- canonical state transitions
-- deterministic execution semantics
-- replay-safe distributed runtime behavior
-- verifiable state consistency
-- consensus-compatible physics execution
+---
 
-The system is designed for:
-- distributed simulation consistency
-- blockchain-integrated execution
-- replay verification
-- fork-resistant state synchronization
-- formalizable execution boundaries
+### Σ(t)（狀態流形 / State Manifold）
 
-- 
+* 系統在時間 t 的全域狀態表示
+* 抽象狀態空間（不對應資料結構）
+* 用於描述整體狀態演化的幾何抽象
 
-> [!NOTE]
-> 本文件由 BearNetworkChain 官方生成，基於 v1.1.0 規格報告書與 Grafana Dashboard v1.0.0 生成。
-> 
-> © 2026 BearNetworkChain Technical Documentation Team.
+---
+
+### ∂Σ/∂t（狀態變化算子 / State Evolution Operator）
+
+* block-to-block 狀態變化描述
+* 表示 execution delta
+* 用於對狀態流形的連續變化進行抽象化表示
+
+---
+
+### ℑ（資訊場 / Information Field）
+
+* 交易與狀態變化造成的資訊擾動場
+* 表示系統內部資訊變化強度
+* 反映執行事件對全域系統的資訊注入程度
+
+---
+
+### F(∂Σ/∂t)（拓撲觀測算子 / Topology Observation Operator）
+
+* 將狀態變化映射為拓撲特徵表示
+* black-box transformation operator
+
+⚠️ 約束：
+
+* 不可逆（non-invertible）
+* 不揭露 mapping 方法
+* 不等同 hashing 或 encoding
+* 僅能作為觀測投影，不得作為狀態還原工具
+
+---
+
+### ℰ（執行成本場 / Execution Cost Functional）
+
+* 系統資源消耗的抽象表示
+* 包含 computation / storage / gas 等概念
+* 用於描述執行過程中的耗散量
+
+---
+
+### V（積分域 / Integration Domain）
+
+* 全域狀態空間的抽象集合
+* 用於聚合系統行為
+* 表示全局統計觀測的積分空間
+
+---
+
+### ψ（相位變數 / Phase Variable）
+
+* 時間連續性參數
+* 用於描述 execution trajectory 的連續性
+* ❗ 不等價 timestamp（重要）
+* 用於表示執行序列在相位空間中的位置與連續性
+
+---
+
+### Π（Proof Object / Zero-Knowledge Proof）
+
+* 可驗證計算之零知識證明物件
+* 與執行語義綁定
+* 為 Γ 觀測與整體正確性判定之關聯材料之一
+
+---
+
+### W（Witness）
+
+* 證明所依據之可重建執行見證
+* 與 Π 對應
+* 作為可驗證執行的基礎證據
+
+---
+
+### P（Policy）
+
+* 系統政策集合
+* 包含 cryptographic policy、consensus policy、circuit policy、binding policy
+* 與 Γ 的收斂與驗證過程綁定
+
+---
+
+## ⚙️ 4. 執行生命週期（Execution Lifecycle）
+
+Γ 僅在以下階段計算：
+
+### Block Finalization Phase（區塊最終化階段）
+
+1. state transition 完成
+2. execution cost 計算
+3. ℑ 建立
+4. ∂Σ/∂t 計算
+5. F(∂Σ/∂t) 轉換
+6. ℰ 計算
+7. V 積分
+8. ψ 相位積分
+9. Γ 提交（commit）
+
+### 補充語義
+
+當 block 尚未進入 finalization phase 時，Γ 不得視為 final Γ，也不得視為可提交值。
+Γ 的正式提交必須建立在已完成的執行、排序與證明條件之上。
+
+---
+
+## 🧠 5. 系統行為約束（Behavior Constraints）
+
+* Deterministic（確定性）
+* Replayable（可重播）
+* Finalization-only（僅最終化計算）
+* Independent of network latency（不受網路延遲影響）
+* Consistent with state root（與 state root 一致）
+* Cross-node identical（全節點一致）
+* Observer-only（僅觀測，不干預執行）
+
+### 補充約束
+
+* Γ 的計算不得回頭影響 EVM 執行結果
+* Γ 的值不得作為排序輸入
+* Γ 的值不得作為證明驗證的前置條件
+* Γ 的值不得作為 state root 的替代品
+
+---
+
+## 🔒 6. Red Flag（語義審計規則）
+
+* RF-1 — Γ Divergence
+* RF-2 — State Non-determinism
+* RF-3 — Entropy Explosion
+* RF-4 — F Non-deterministic
+* RF-5 — Equivalence Failure
+* RF-6 — Execution Semantics Violation
+* RF-7 — Ordering Violation
+* RF-8 — Cryptographic Trust Root Failure
+* RF-9 — Identity Forgery Risk
+* RF-10 — ZK Proof Invalidity
+* RF-11 — Circuit Divergence
+* RF-12 — Witness Mismatch
+* RF-13 — Proof-Crypto Inconsistency
+* RF-14 — CryptoPolicy Drift
+* RF-15 — Trust Root Downgrade
+
+---
+
+## 📦 7. 可觀測輸入（Observable Inputs）
+
+* state transition result（抽象表示）
+* execution cost field
+* state diff（不可結構化）
+* temporal ordering
+* proof status
+* witness status
+* policy status
+
+### 補充說明
+
+可觀測輸入指的是能夠進入 Γ 抽取過程的已完成執行材料，但這些材料本身不得被 Γ 反向修改。
+
+---
+
+## 📊 8. 可驗證輸出（Verifiable Outputs）
+
+* 相同輸入 → 相同 Γ
+* Γ 與 state root 一致
+* 支援 replay 驗證
+* 全節點 deterministic
+* 可重算 Γ_final
+* 可驗證 Γ_bind（若有記錄）
+
+### 補充說明
+
+可驗證輸出不僅要求值一致，也要求其推導過程在 canonical artifacts 下可被重建。
+
+---
+
+## 🧠 9. 共識層地位（Consensus Role）
+
+Γ 為：
+
+* execution-level invariant
+* 非 consensus replacement
+* 非 state root replacement
+* 作為一致性驗證輔助量（consistency witness）
+
+### 補充說明
+
+Γ 是執行層的全域一致性抽取結果，不是共識本身，也不是共識的替代層。
+Clique 負責排序，EVM 負責執行，PQC 負責授權，ZK 負責可驗證性，Γ 負責抽取一致性。
+
+---
+
+## 🔐 10. Canonicality Statement（規格鎖定）
+
+本文件為：
+
+> Γ Physics Engine 的唯一語義規格（Canonical Behavioral Specification）
+
+所有實作必須遵守：
+
+* 語義一致性（semantic consistency）
+* 行為一致性（behavior consistency）
+* 收斂一致性（convergence consistency）
+* 可重播一致性（replay consistency）
+
+但不得：
+
+* 推導內部實作
+* 重建 execution graph
+* 推測系統架構
+* 用 Γ 反推未授權的系統內部細節
+
+---
+
+## ⚡ 最終定義（Final Definition）
+
+Γ 是：
+
+> execution-level invariant over blockchain state evolution
+> （區塊鏈狀態演化的執行層不變量）
+
+### 補齊定義
+
+Γ 同時也是：
+
+> BearNetworkChain 對整體執行歷史之全域不變量抽取結果
+
+---
+
+## 🧩 11. Γ Physics Engine 與核心公式的完整閉環
+
+為了讓 Γ Physics Engine 的語義完整並可直接對外說明，本節定義其完整閉環如下：
+
+### 11.1 執行公理
+
+```text
+S(t+1) = EVM(S(t), Tx(t))
+```
+
+### 11.2 排序公理
+
+```text
+B(t) = Clique(P(t))
+```
+
+### 11.3 不變量動態公理
+
+```text
+dΓ/dt = -kΓ + ∫_V (ℑ XOR F(∂Σ/∂t) - ℰ) dV + 2π ∫ Σ(t) dψ
+```
+
+### 11.4 穩態收斂公理
+
+```text
+dΓ/dt = 0
+```
+
+因此：
+
+```text
+Γ* = (1/k) [ ∫_V (ℑ XOR F(∂Σ/∂t) - ℰ) dV + 2π ∫ Σ(t) dψ ]
+```
+
+### 11.5 最終提交值
+
+```text
+Γ_final = max(Γ_min, Γ*)
+```
+
+### 11.6 引擎身份公理
+
+```text
+Γ := Φ(S(t), Tx(t), B(t), Π(t), W(t), P(t))
+```
+
+其中：
+
+* `Φ` = 全域執行不變量抽取算子
+* `S(t)` = 狀態演化
+* `Tx(t)` = 交易與輸入
+* `B(t)` = 排序結果
+* `Π(t)` = 證明結果
+* `W(t)` = 見證集合
+* `P(t)` = 政策集合
+
+---
+
+## 🧾 發佈聲明
+
+本文件僅定義：
+
+* 語義行為（semantic behavior）
+* 一致性規則（consistency rules）
+* 驗證條件（verification conditions）
+* 引擎身份（engine identity）
+* 收斂定義（steady-state definition）
+
+不包含：
+
+* implementation details
+* optimization strategies
+* internal architecture
+
+---
+
+## 🧠 12. 對外說明用的統一定義
+
+「為什麼叫 Γ Physics Engine」：
+
+> Γ Physics Engine 並非僅為一個觀測量，而是 BearNetworkChain 對整體執行歷史的一致性抽取引擎。
+> 它以 EVM、Clique、PQC、ZK、Witness 與 Policy 的 canonical artifacts 為輸入，透過不變量動態方程與穩態收斂定義，產生單一可驗證、可重播、可提交的全域不變量 Γ。
+
+
