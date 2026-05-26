@@ -1,5 +1,15 @@
 # 🛡️ BearNetworkChain 物理感知防禦核心：Quantum-ZK 收斂層 (Quantum-ZK Convergence Layer) 深度技術專題報告
 
+**原創者 (Author)**：ChenTing (陳霆) 
+
+**創辦職位 (Title)**：Founder, CEO & Chief Technology Officer, BearNetworkChain
+
+**學術單位 (Affiliation)**：College of Management, Tunghai University
+
+**聯絡信箱 (Email)**：bnkt@bearnetwork.net
+
+**Canonical DOI**: [doi:10.5281/zenodo.20388630](https://doi.org/10.5281/zenodo.20388630)
+
 ---
 
 ## 📌 一、 前言：後量子密碼學（PQC）在區塊鏈的工程瓶頸
