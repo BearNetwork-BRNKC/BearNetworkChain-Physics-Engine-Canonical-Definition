@@ -294,41 +294,21 @@ kΓ = ∫_V (ℑ XOR F(∂Σ/∂t) - ℰ) dV + 2π ∫ Σ(t) dψ
 
 ## 🔒 6. Red Flag（語義審計規則）
 
-### RF-Γ1
-
-Γ 非 deterministic
-
-### RF-Γ2
-
-F 被視為可逆或可還原結構
-
-### RF-Γ3
-
-dΓ/dt 非收斂
-
-### RF-Γ4
-
-Γ 與 state root 不一致
-
-### RF-Γ5
-
-非 finalization phase 計算 Γ
-
-### RF-Γ6
-
-引入外部非確定性來源
-
-### RF-Γ7
-
-Γ 被用於改變 EVM 執行語義
-
-### RF-Γ8
-
-Γ 被用於替代排序、授權或證明層
-
-### RF-Γ9
-
-Γ 無法由 canonical artifacts 重播重算
+* RF-1 — Γ Divergence
+* RF-2 — State Non-determinism
+* RF-3 — Entropy Explosion
+* RF-4 — F Non-deterministic
+* RF-5 — Equivalence Failure
+* RF-6 — Execution Semantics Violation
+* RF-7 — Ordering Violation
+* RF-8 — Cryptographic Trust Root Failure
+* RF-9 — Identity Forgery Risk
+* RF-10 — ZK Proof Invalidity
+* RF-11 — Circuit Divergence
+* RF-12 — Witness Mismatch
+* RF-13 — Proof-Crypto Inconsistency
+* RF-14 — CryptoPolicy Drift
+* RF-15 — Trust Root Downgrade
 
 ---
 
